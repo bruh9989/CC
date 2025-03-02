@@ -1,0 +1,49 @@
+**PRACTICAL 1**
+
+code:
+public String IntroDollar(@WebParam(name = "a")double a) {
+    return "The Indian Rupee value of "+a+" Dollar is "+a*87.47;
+}
+
+<body>
+    <form action="output.jsp">
+        <pre>
+            Enter the currency in rupees : <input type="text" name="t1">
+            <input type="submit">       <input type="reset">
+        </pre>
+    </form>
+</body>
+
+
+double a = Double.parseDouble(request.getParameter("t1"));
+
+
+**PRACTICAL 2**
+
+(write this in python IDLE)
+
+from zeep import Client
+wsdl_url= "http://localhost:8080/pract/Currency? wsdl"
+client=Client(wsdl_url)
+
+#call the method on the webservice
+d=float(input("Enter Currency in Indian Rupees:"))
+result = client.service.InrtoDollar(d)
+print(result)
+
+
+
+**PRACTICAL 3**
+
+CurrencyClient client = new CurrencyClient();
+Console.WriteLine("Enter the Currency in Indian Rupees : ");
+double d = double.Parse(Console.ReadLine());
+Console.WriteLine(client.InrtoDollar(d));
+Console.WriteLine("Enter any key to Exit ... ");
+Console.Readkey();
+Console.ReadLine();
+
+(above code for PRACTICAL 4 client too)
+
+
+
